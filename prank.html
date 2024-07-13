@@ -2,50 +2,63 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Page title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Ensure proper scaling on mobile devices -->
+    <title>Responsive Page</title>
     <style>
-        h1{
-           position: relative;
-           top: 90px;
-            font-size: 70px;
-            font-weight: 1000;
+        body {
+            font-family: Arial, sans-serif; /* Choose a readable font */
+            margin: 0;
+            padding: 0;
+            text-align: center; /* Center align text */
         }
-         p{
-           position: relative;
-           top: 90px;
-            left:90px;
-            font-size: 100px;
-            font-weight: 1000;
-         animation:zoom 1s ease-in-out 0s infinite;
+        h1 {
+            font-size: 5em; /* Increase font size */
+            font-weight: bold; /* Use a suitable font weight */
+            margin-top: 20vh; /* Use percentage or viewport units for spacing */
+        }
+        p {
+            font-size: 7em; /* Increase font size */
+            animation: zoom 1s ease-in-out infinite, moveUpDown 2s ease-in-out infinite; /* Apply animations */
+            position: relative; /* Ensure relative positioning for animation */
+            top: 90px; /* Adjust position for animation */
         }
         @keyframes zoom {
-            
-            0%{
-              position: relative;
-           top: 90px;
-           color: black;
-           
+            0% {
+                color: black; /* Initial color */
+                transform: scale(1); /* Initial scale */
             }
-            50%{
-                position: relative;
-           top: 20px;
-           color:blue;
-           
+            50% {
+                color: blue; /* Mid-animation color */
+                transform: scale(1.5); /* Scale the emoji */
             }
-            100%{
-                position: relative;
-           top: 90px;
-           color: red;
-           
+            100% {
+                color: red; /* Final color */
+                transform: scale(1); /* Return to original scale */
             }
         }
-            
-       
+
+        @keyframes moveUpDown {
+            0%, 100% {
+                transform: translateY(0); /* Start and end at the same position */
+            }
+            50% {
+                transform: translateY(-90px); /* Move up */
+            }
+        }
         
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 3em; /* Adjust font size for smaller screens */
+            }
+            p {
+                font-size: 5em; /* Adjust font size for smaller screens */
+            }
+        }
     </style>
 </head>
 <body>
-    <h1>FUCK YOU </h1>
+    <h1>FUCK YOU</h1>
     <p>🖕</p>
 </body>
 </html>
